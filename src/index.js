@@ -1,17 +1,17 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Pokemon from './components/pokemon/pokemon';
 import { RecoilRoot } from 'recoil';
-import PokemonList from './components/pokemon-list/PokemonList';
-import PokemonSpinner from './components/pokemon-spinner/PokemonSpinner';
+import Homepage from './components/homepage/Homepage';
+import PokemonSuspense from './components/pokemon-suspense/PokemonSuspense';
 
 const router = createBrowserRouter([
   {
     path: "/pokemons",
-    element: <PokemonList />,
+    element: <Homepage />,
   },
   {
     path: "/pokemons/:pokemonId",
@@ -27,9 +27,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <RecoilRoot>
-      <Suspense fallback={<PokemonSpinner />}>
+      <PokemonSuspense>
         <RouterProvider router={router} />
-      </Suspense >
+      </PokemonSuspense>
     </RecoilRoot>
   </React.StrictMode >
 );

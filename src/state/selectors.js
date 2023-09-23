@@ -13,9 +13,9 @@ export const pokemonListSelector = selector({
 
 export const pokemonSelector = selectorFamily({
     key: 'Pokemon',
-    get: (pokemonId) => async () => {
+    get: (pokemonName) => async () => {
         await delay(500) // Fake delay to check spinner is working
-        const response = await getPokemonById(pokemonId);
+        const response = await getPokemonById(pokemonName);
         return await response.json()
     },
 });

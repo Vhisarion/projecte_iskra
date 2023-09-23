@@ -1,16 +1,15 @@
 import React from 'react'
 import { useRecoilValue } from 'recoil'
 import { pokemonListSelector } from '../../state/selectors'
-import { useNavigate } from 'react-router'
+import PokemonListItem from './PokemonListItem'
 
 function PokemonList() {
-    const navigate = useNavigate()
     const pokemonList = useRecoilValue(pokemonListSelector)
 
     return (
         <ul>
             {pokemonList.map((pokemon, index) => {
-                return <li key={pokemon.id} onClick={() => navigate(`/pokemons/${index + 1}`)}>{pokemon.name}</li>
+                return <PokemonListItem key={index} pokemon={pokemon} />
             })}
         </ul>
     )
