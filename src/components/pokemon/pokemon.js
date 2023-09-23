@@ -1,11 +1,16 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import { useRecoilValue } from 'recoil'
+import { pokemonSelector } from '../../state/selectors'
 
 function Pokemon() {
-    const {pokemonId} = useParams()
-console.log(pokemonId);
+    const { pokemonId } = useParams()
+    const pokemon = useRecoilValue(pokemonSelector(pokemonId))
     return (
-        <div>Pokemon Component with id {pokemonId}</div>
+        <>
+            <img src={pokemon.sprites.front_default} alt={`Imatge del pokémon ${pokemon.name}`}></img>
+            <div><b>Nom: </b>{pokemon.name}</div>
+        </>
     )
 }
 
