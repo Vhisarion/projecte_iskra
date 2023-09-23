@@ -3,11 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
 .spriteContainer {
-    margin-top: 1rem;
-    max-width: 75%;
+    max-width: 50%;
     max-height: 50%;
     border: 1px solid darkgray;
     border-radius: 2rem;
@@ -19,41 +19,5 @@
 
 .title {
     text-decoration: underline;
-}
-
-.backButton {
-    padding: .5rem 1rem;
-    border: none;
-    outline: 1px solid darkgray;
-    position: relative;
-    border-radius: 2rem;
-    background: linear-gradient(red 0%, red 40%, black 40%, black 60%, white 60%, white 100%);
-    cursor: pointer;
-    display: flex;
-    margin-top: 1rem;
-    margin-bottom: 5rem;
-    z-index: 1;
-}
-
-.backButton::before {
-    content: "";
-    position: absolute;
-    top: .4rem;
-    right: .4rem;
-    left: .4rem;
-    bottom: .4rem;
-    background-color: white;
-    border-radius: 3rem;
-    z-index: -1;
-}
-
-.backButton::after {
-    content: attr(data);
-    font-size: 1rem;
-}
-
-.backButton>svg {
-    margin-right: 1rem;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-bottom: 1rem;
 }

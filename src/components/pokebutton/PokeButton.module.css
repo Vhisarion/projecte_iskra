@@ -1,0 +1,46 @@
+.pokeButton {
+    padding: .5rem 1rem;
+    border: none;
+    outline: 1px solid darkgray;
+    position: relative;
+    border-radius: 2rem;
+    background: linear-gradient(red 0%, red 40%, black 40%, black 60%, white 60%, white 100%);
+    cursor: pointer;
+    display: flex;
+    z-index: 1;
+    transition: all .25s;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.pokeButton::before {
+    content: "";
+    position: absolute;
+    top: .6rem;
+    right: .6rem;
+    left: .6rem;
+    bottom: .6rem;
+    background-color: white;
+    border-radius: 3rem;
+    z-index: -1;
+    transition: all .25s;
+}
+
+.pokeButton::after {
+    content: attr(data);
+    font-size: 1rem;
+    transition: all .25s ease-out;
+}
+
+.pokeButton:hover::before {
+    top: .2rem;
+    bottom: .2rem;
+    left: .2rem;
+    right: .2rem;
+}
+
+.pokeButton>svg {
+    margin-right: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
