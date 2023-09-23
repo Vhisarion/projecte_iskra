@@ -1,11 +1,14 @@
 import React, { Suspense } from 'react'
 import PokemonSpinner from '../pokemon-spinner/PokemonSpinner'
+import { ErrorBoundary } from 'react-error-boundary'
 
 function PokemonSuspense({ children }) {
     return (
-        <Suspense fallback={<PokemonSpinner />}>
-            {children}
-        </Suspense>
+        <ErrorBoundary fallback={<div>error</div>}>
+            <Suspense fallback={<PokemonSpinner />}>
+                {children}
+            </Suspense>
+        </ErrorBoundary>
     )
 }
 

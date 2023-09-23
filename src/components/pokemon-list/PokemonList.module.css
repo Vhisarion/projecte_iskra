@@ -1,3 +1,23 @@
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: left;
+    gap: 1rem;
+}
+
+.listOptionsContainer {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .listContainer {
     display: flex;
     flex-direction: column;
@@ -6,32 +26,23 @@
     gap: .5rem;
     padding: 0;
     margin: 0;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .listItem {
     position: relative;
+    width: 100%;
     list-style: none;
     text-align: left;
-    width: 25%;
-    max-width: 50%;
     padding: .5rem 1rem .5rem 1rem;
     border: 1px solid darkgray;
     border-radius: 1rem;
-    background-image: url('../../assets/PokeballIcon.png');
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: .6rem;
     display: flex;
     flex-direction: row;
     cursor: pointer;
-}
-
-.listItem::before {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
+    font-size: 1.2rem;
 }
 
 .listItem:hover {
@@ -39,10 +50,47 @@
 }
 
 .idText {
-    margin-left: auto;
-    margin-top: 0;
+    margin-left: auto
 }
 
 p {
-    margin: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.pageSelectorContainer {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    margin-left: auto;
+}
+
+.pageNumber {
+    min-width: 1rem;
+    cursor: pointer;
+    user-select: none
+}
+
+.pageNumber:hover {
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+.pageNumber.currentPage {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.emptyPageNumber {
+    min-width: 1rem;
+}
+
+.listModeSelectorContainer {
+    margin-left: auto;
+}
+
+.iconButton:hover {
+    cursor: pointer;
+    color: red;
 }

@@ -7,8 +7,3 @@ export const getAllPokemons = async () => {
 export const getPokemonById = async (id) => {
     return fetch(`${BASE_URL}/pokemon/${id}`)
 }
-
-
-
-
-
