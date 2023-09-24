@@ -4,11 +4,12 @@ import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
 
 import styles from './PokemonList.module.css'
 import { useRecoilState, useRecoilValue } from 'recoil'
-import { currentPageState, listItemsPerPageState } from '../../state/atoms'
+import { currentPageState } from '../../state/atoms'
+import { currentItemsPerPage } from '../../state/selectors'
 
 function PageSelector({ totalItems }) {
     const [currentPage, setCurrentPage] = useRecoilState(currentPageState)
-    const itemsPerPage = useRecoilValue(listItemsPerPageState)
+    const itemsPerPage = useRecoilValue(currentItemsPerPage)
 
     const totalPages = Math.floor(totalItems / itemsPerPage) + 1
 
@@ -21,6 +22,9 @@ function PageSelector({ totalItems }) {
         if (newPage <= 0 || newPage > totalPages) return
         setCurrentPage(newPage)
     }
+
+    // Si es canvia el mode de llista, haurem de comprovar que en la pàgina hi segueixi havent pokémons. Si no, anem a la última pàgina
+    if (currentPage > totalPages) setCurrentPage(totalPages)
 
     return (
         <div className={styles.pageSelectorContainer}>

@@ -1,5 +1,7 @@
 import { selector, selectorFamily } from "recoil";
 import { getAllPokemons, getPokemonById } from "../api/pokemonApi";
+import { gridItemsPerPageState, listItemsPerPageState, listModeState } from "./atoms";
+import { ListModes } from "../enums/ListMode";
 
 export const pokemonListSelector = selector({
     key: 'PokemonList',
@@ -19,6 +21,19 @@ export const pokemonSelector = selectorFamily({
         return await response.json()
     },
 });
+
+export const currentItemsPerPage = selector({
+    key: 'CurrentItemsPerPage',
+    get: ({ get }) => {
+        switch (get(listModeState)) {
+            case ListModes.GRID: {
+                return get(gridItemsPerPageState)
+            }
+            default:
+                return get(listItemsPerPageState)
+        }
+    }
+})
 
 
 function delay(t) {
