@@ -4,11 +4,11 @@ import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
 
 import styles from './PokemonList.module.css'
 import { useRecoilState, useRecoilValue } from 'recoil'
-import { currentPageState, itemsPerPageState } from '../../state/atoms'
+import { currentPageState, listItemsPerPageState } from '../../state/atoms'
 
 function PageSelector({ totalItems }) {
     const [currentPage, setCurrentPage] = useRecoilState(currentPageState)
-    const itemsPerPage = useRecoilValue(itemsPerPageState)
+    const itemsPerPage = useRecoilValue(listItemsPerPageState)
 
     const totalPages = Math.floor(totalItems / itemsPerPage) + 1
 

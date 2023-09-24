@@ -50,12 +50,14 @@ h1 {
 }
 
 .idText {
-    margin-left: auto
+    margin-left: auto;
+    text-align: center;
 }
 
 p {
     margin-top: auto;
     margin-bottom: auto;
+    text-align: center;
 }
 
 .pageSelectorContainer {
@@ -93,4 +95,90 @@ p {
 .iconButton:hover {
     cursor: pointer;
     color: red;
+}
+
+.gridContainer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.gridItem {
+    border: 1px solid darkgray;
+    border-radius: 2rem;
+    padding-bottom: 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    flex-basis: 21%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.gridItem .idText {
+    margin-left: 0;
+}
+
+.gridItem>img {
+    width: 100%;
+    transition: all .5s;
+}
+
+
+/* Smartphones */
+@media (max-width: 480px) {
+    .gridItem {
+        flex-basis: 30%;
+    }
+
+    .gridItem p {
+        font-size: .8rem;
+    }
+
+    .listContainer,
+    .gridContainer {
+        width: 80%;
+    }
+}
+
+/* Tablet */
+@media (min-width: 480px) and (max-width: 1024px) {
+    .gridItem {
+        flex-basis: 25%;
+    }
+
+    .listContainer,
+    .gridContainer {
+        width: 75%;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .gridItem {
+        flex-basis: 19%;
+    }
+}
+
+.gridItem:hover>img {
+    transform: scale(1.2, 1.2);
+}
+
+.listItem>img {
+    transition: all .5s;
+}
+
+.listItem:hover>img {
+    transform: scale(1.4, 1.4);
 }

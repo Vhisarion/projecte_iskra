@@ -12,7 +12,12 @@ export const currentPageState = atom({
     default: 1,
 })
 
-export const itemsPerPageState = atom({
-    key: "itemsPerPage",
+export const listItemsPerPageState = atom({
+    key: "listItemsPerPage",
     default: 10
+})
+
+export const gridItemsPerPageState = atom({
+    key: "gridItemsPerPage",
+    default: 12
 })
