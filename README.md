@@ -3,6 +3,8 @@ Amb el projecte clonat, situar-se a l'arrel i executar `npm install` per a desca
 
 Un cop hagi finalitzat la instal·lació, executar `npm start` per a iniciar el servidor de desenvolupament, que es desplegarà a `localhost:3000`. Accedir a aquesta adreça redireccionará a la pàgina principal `/pokemons`.
 
+Per a obtenir l'aplicació preparada per a desplegar en un entorn estàtic, executar `npm run build`. Es genererà la carpeta build, que podriem desplegar per exemple amb `serve` amb la comanda `serve -s build`.
+
 # Breu explicació de la solució implementada
 Partint del projecte creat amb la comanda npx create-react-app, he afegit **React Router** per a la navegació a les pàgines de detall i **Recoil** per a la gestió de l'estat global.
 
