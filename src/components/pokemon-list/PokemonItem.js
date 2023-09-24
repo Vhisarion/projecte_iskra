@@ -11,7 +11,6 @@ function PokemonItem({ pokemon }) {
     const [pokeImage, setPokeImage] = useState(null)
     const listMode = useRecoilValue(listModeState)
     const navigate = useNavigate()
-    console.log(pokemon);
     const pokemonId = pokemon.url.replace("https://pokeapi.co/api/v2/pokemon/", "").replaceAll("/", "")
 
     useEffect(() => {
