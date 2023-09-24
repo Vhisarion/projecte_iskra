@@ -1,0 +1,184 @@
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: left;
+    gap: 1rem;
+}
+
+.listOptionsContainer {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.listItem {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-align: left;
+    padding: .5rem 1rem .5rem 1rem;
+    border: 1px solid darkgray;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.listItem:hover {
+    background-color: lightgray;
+}
+
+.idText {
+    margin-left: auto;
+    text-align: center;
+}
+
+p {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+}
+
+.pageSelectorContainer {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    margin-left: auto;
+}
+
+.pageNumber {
+    min-width: 1rem;
+    cursor: pointer;
+    user-select: none
+}
+
+.pageNumber:hover {
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+.pageNumber.currentPage {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.emptyPageNumber {
+    min-width: 1rem;
+}
+
+.listModeSelectorContainer {
+    margin-left: auto;
+}
+
+.iconButton:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.gridContainer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.gridItem {
+    border: 1px solid darkgray;
+    border-radius: 2rem;
+    padding-bottom: 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    flex-basis: 21%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.gridItem .idText {
+    margin-left: 0;
+}
+
+.gridItem>img {
+    width: 100%;
+    transition: all .5s;
+}
+
+
+/* Smartphones */
+@media (max-width: 480px) {
+    .gridItem {
+        flex-basis: 30%;
+    }
+
+    .gridItem p {
+        font-size: .8rem;
+    }
+
+    .listContainer,
+    .gridContainer {
+        width: 80%;
+    }
+}
+
+/* Tablet */
+@media (min-width: 480px) and (max-width: 1024px) {
+    .gridItem {
+        flex-basis: 25%;
+    }
+
+    .listContainer,
+    .gridContainer {
+        width: 75%;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .gridItem {
+        flex-basis: 19%;
+    }
+}
+
+.gridItem:hover>img {
+    transform: scale(1.2, 1.2);
+}
+
+.listItem>img {
+    transition: all .5s;
+}
+
+.listItem:hover>img {
+    transform: scale(1.4, 1.4);
+}

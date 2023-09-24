@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.spriteContainer {
+    max-width: 50%;
+    max-height: 50%;
+    border: 1px solid darkgray;
+    border-radius: 2rem;
+}
+
+.sprite {
+    width: 100%;
+}
+
+.title {
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
