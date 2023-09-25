@@ -1,12 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Pokemon from './components/pokemon/pokemon';
-import { RecoilRoot } from 'recoil';
-import Homepage from './components/homepage/Homepage';
-import PokemonSuspense from './components/pokemon-suspense/PokemonSuspense';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
+import { RecoilRoot } from "recoil";
+import Homepage from "./components/homepage/Homepage";
+import PokemonSuspense from "./components/pokemon-suspense/PokemonSuspense";
+import Pokemon from "./components/pokemon/Pokemon";
 
 const router = createBrowserRouter([
   {
@@ -15,15 +19,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/pokemons/:pokemonId",
-    element: <Pokemon />
+    element: <Pokemon />,
   },
   {
     path: "*",
-    element: <Navigate to={"/pokemons"} />
-  }
-])
+    element: <Navigate to={"/pokemons"} />,
+  },
+]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <RecoilRoot>
@@ -31,7 +35,7 @@ root.render(
         <RouterProvider router={router} />
       </PokemonSuspense>
     </RecoilRoot>
-  </React.StrictMode >
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

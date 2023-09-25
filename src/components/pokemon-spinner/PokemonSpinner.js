@@ -4,10 +4,14 @@ import './PokemonSpinner.css'
 
 function PokemonSpinner() {
   return (
-    <div className='pokemon-spinner-container'>
+    <div
+      role="alert"
+      className="pokemon-spinner-container"
+      data-testid="pokemon-spinner"
+    >
       <div className="pokemon-spinner"></div>
     </div>
-  )
+  );
 }
 
 export default PokemonSpinner

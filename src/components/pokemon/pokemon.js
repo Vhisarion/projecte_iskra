@@ -4,7 +4,7 @@ import { useRecoilValue } from 'recoil'
 import { pokemonSelector } from '../../state/selectors'
 import PokemonSpinner from '../pokemon-spinner/PokemonSpinner'
 
-import styles from './pokemon.module.css'
+import styles from './Pokemon.module.css'
 import { capitalizeFirstLetter } from '../../utils/StringUtils'
 import PokeButton from '../pokebutton/PokeButton'
 
