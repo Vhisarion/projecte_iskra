@@ -5,11 +5,9 @@ import { ErrorBoundary } from 'react-error-boundary'
 function PokemonSuspense({ children }) {
     return (
         <ErrorBoundary fallback={<div>error</div>}>
-            <Suspense fallback={<PokemonSpinner />}>
-                {children}
-            </Suspense>
+          <Suspense fallback={<PokemonSpinner />}>{children}</Suspense>
         </ErrorBoundary>
-    )
+    );
 }
 
 export default PokemonSuspense
